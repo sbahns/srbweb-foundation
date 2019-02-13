@@ -1,0 +1,14 @@
+/*
+Theme Name: SRBWeb Foundation 6
+Author: Sarah Barnes
+Author URI: https://sarahbarnesweb.com/
+Description: WordPress theme based on Zurb Foundation 6.4.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: srbweb-f6
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+@import "css/app.css";
