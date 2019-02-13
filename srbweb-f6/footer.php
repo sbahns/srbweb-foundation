@@ -30,8 +30,6 @@
 			</div>
 
 			<?php
-				get_template_part( 'template-parts/icons', 'footer' );
-
 				if ( is_active_sidebar( 'footer-copyright' ) ) {
 					?>
 					<div id="footer-text" class="grid-x">
@@ -46,20 +44,8 @@
 	</div> <!-- end div.site-wrap.footer-wrap -->
 </section> <!-- end section#page -->
 
-<a id="FloaterModalLink" href="#" data-reveal-id="floater"></a>
 <?php
 wp_footer();
-
-if ( ! is_user_logged_in() && ! isset( $_COOKIE["floater_cookie"] ) ) {
-	?>
-	<script>
-		(function($) {
-		    	$('#floater').foundation('reveal', 'open');
-		    }
-		)(jQuery);
-	</script>
-	<?php
-}
 ?>
 
 </body>
