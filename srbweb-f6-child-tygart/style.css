@@ -1,0 +1,15 @@
+/*
+Theme Name: Tygart.com Custom Theme
+Author: Sarah R. Barnes
+Author URI: https://sarahbarnesweb.com/
+Template: srbweb-f6
+Description: A custom theme built as child theme to SRBWeb F6, a parent theme developed using Zurb Foundation 6.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tygart-srbweb-f6-child
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+@import "css/app.css";

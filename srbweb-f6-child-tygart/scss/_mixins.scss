@@ -1,0 +1,11 @@
+.menu-icon:after {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 90%;
+   height: 3px;
+   background: #c0c0c0;
+   box-shadow: 0 7px 0 #c0c0c0, 0 14px 0 #c0c0c0;
+   content: "";
+ }

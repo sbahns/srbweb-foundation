@@ -1,0 +1,43 @@
+<?php
+/*
+Template Name: Network Home
+*/
+$is_home_page = true;
+get_header();
+
+$has_slider = get_field( 'has_slider' );
+$add_slider = get_field( 'add_slider' );
+
+$add_customers_section = get_field( 'add_customers_section' );
+?>
+<section id="page" class="network-home">
+			<?php if( get_field('has_slider') ) { ?>
+				<div class="grid-x slider-section">
+						<div class="small-12 cell">
+							<?php echo $add_slider; ?>
+						</div>
+				</div>
+			<?php } ?>
+
+			<?php get_template_part( 'template-parts/modules/icon', 'grid' );?>
+
+			<?php
+			$user = wp_get_current_user();
+			$allowed_roles = array('editor', 'administrator', 'author');
+      if( array_intersect($allowed_roles, $user->roles ) ) {
+     		echo '<div class="grid-x grid-margin-x grid-padding-y"><div class="small-12 cell"><p class="postmeta-comment alignright">';
+				edit_post_link( 'Edit' );
+				echo '</p></div></div>';
+				}?>
+
+			<?php get_template_part( 'template-parts/modules/blocks', 'section' );?>
+
+			<?php get_template_part( 'template-parts/modules/articles', 'section' );?>
+
+				<?php if( $add_customers_section ) {
+					 echo do_shortcode('[get_post_by_name page_title="Our Customers" post_type="uc"]');
+					} ?>
+
+</section>
+<?php
+get_footer();

@@ -1,0 +1,108 @@
+@media print {
+	@charset "UTF-8";
+	@page {
+	    height: 100%;
+	    margin: 2cm;
+	}
+
+	html{
+	    margin-top: 20px;
+	    margin-bottom: 20px;
+	    padding: 20px;
+	    padding-bottom: 40px;
+	}
+	html, body, p {
+	  overflow: visible !important;
+		overflow-x: visible !important;
+	  overflow-y: visible;
+	}
+
+	.grid-x,
+  .grid-y,
+  .cell {
+ 	 display: block;
+  }
+	/* NOTE: Firefox does not print display:flex correctly on print, so we are setting the flex-based classes to display:block */
+
+	body, p, a, html {
+	  font-size: 0.8rem;
+	}
+	h1 {
+	    font-size: 1.2rem;
+	}
+	h2 {
+	    font-size: 1.1rem;
+	}
+	h3{
+	    font-size: 1rem;
+	}
+
+	p {
+	  margin-bottom: .5rem;
+	}
+
+	.article-content {
+	  display: block;
+	}
+
+	* {
+	  overflow: visible !important;
+	  float: none !important;
+	  clear: both !important;
+	}
+
+	#iab-banner, #my-fixed-header,
+	.login.menu,
+	#footer,
+	.rr,
+	#sidebar,
+	#spacer,div.ofie, #discussion,
+	.viewMore,
+	.parsing_buttons,
+	.defaultDesc,
+	.startitems,
+	.orbit-container,
+	.video_info_background,
+	p.video-title > a, .leaderboard-container,.topnav, .top-bar, .postmeta-comment, .tags, .comments_section,
+	.video-container, .rev_slider_wrapper, hr.slider-hr  {
+	 display:none !important;
+	 visibility:hidden;
+	}
+
+	.essb_links, .post-ratings, .rpbt_shortcode {
+	  display:none !important;
+	  visibility:hidden !important;
+	}
+
+	section#page {
+		//padding-top: 0;
+		&.padding-on-print {
+			padding-top: 30px !important;
+		}
+	}
+
+	.gallery-icon > a {
+	  overflow: visible;
+	}
+
+	a {text-decoration:none;}
+	a[href*="/"]:after, a[href*="/"]:visited:after {content: normal!important;}
+
+
+	ul, img, p {
+	   page-break-inside: avoid;
+	}
+
+  #single {
+    .entry {
+      .single-thumbnail {
+        margin-top: 1.2em;
+        margin-bottom: 1.2em;
+        width: auto;
+        max-width: 65%;
+      }
+    }
+  }
+
+
+}
