@@ -1097,17 +1097,6 @@ if ( ! function_exists( 'get_first_sentence' ) ) {
 	}
 }
 
-/************************/
-
-function my_sort_options_filter( $sortoptions ) {
-    if ( function_exists( 'is_shopp_page' ) ) {
-        foreach ( $sortoptions as $value => $label ) {
-            if ( $value == 'random' ) unset($sortoptions[ $value ]);
-        }
-    }
-    return $sortoptions;
-}
-add_filter( 'shopp_category_sortoptions', 'my_sort_options_filter' );
 
 // Adds post-type support for excerpts in pages
 
@@ -1158,27 +1147,3 @@ function my_wp_mail_from_name($from_name) {
 	return $from_name;
 }
 add_filter('wp_mail_from_name', 'my_wp_mail_from_name');
-
-/**
- * Added the folowing 2 filters beacuse you are trying to use shortcodes in
- * category descriptions. Shortcodes dont normally work outside of the wp-conmtent
- * area of a post so you need to tell it where else to work.
- */
-
-// add_filter( 'term_description', 'shortcode_unautop');
-// add_filter( 'term_description', 'do_shortcode' );
-
-/**
- * remove the update nag so clients don't press it?
- */
-add_action('admin_menu','my_remove_update_nag');
-function my_remove_update_nag()
-{
-	remove_action( 'admin_notices', 'update_nag', 3 );
-}
-
-//remove the confirmation email functionality when a user updates the email
-add_action('personal_options_update', 'remove_email_change_confirmation_action', 1);
-function remove_email_change_confirmation_action () {
-	remove_action('personal_options_update', 'send_confirmation_on_profile_email');
-}
