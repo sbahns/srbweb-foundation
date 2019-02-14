@@ -1,9 +1,8 @@
 </div> <!-- .grid-container-->
 
 	<?php
-	get_template_part( 'template-parts/modal', 'cvv' );
 	get_template_part( 'template-parts/modal', 'login' );
-	get_template_part( 'template-parts/modal', 'floater' );
+
 	?>
 	<div id="footer" class="grid-container grid-container-padded footer-wrap">
 		<footer class="site-footer" role="contentinfo">
